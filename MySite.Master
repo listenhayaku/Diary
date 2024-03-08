@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MySite.master.cs" Inherits="Diary.MySite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="~/Content/MyStyle/MyStyle.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="TopBar">
+            <ul>
+                <li><a runat="server" href="~/Home">首頁</a></li>
+                <li><a runat="server" href="~/ModifyUser">修改權限</a></li>
+
+                <li><a runat="server" href="~/Login">登入</a></li>
+                
+                <li>Test</li>
+            </ul>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="MainFrame" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+</body>
+</html>

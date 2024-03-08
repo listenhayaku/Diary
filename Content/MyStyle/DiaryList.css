@@ -1,0 +1,16 @@
+﻿table{
+    width: 100%;
+}
+table td{
+    text-align: center;
+}
+
+table thead {
+    background-color: var(--maintheme1);
+}
+
+table tbody {
+    background-color: var(--maintheme3);
+}
+
+

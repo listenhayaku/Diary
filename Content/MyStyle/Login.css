@@ -1,0 +1,55 @@
+﻿.CardContain{
+    position: relative;
+    margin: auto;
+    display: flex;
+}
+
+#LoginCard {
+    position: absolute;
+    opacity: 1;
+    z-index: 0;
+    padding: 1rem;
+    background: gray;
+    margin: auto;
+    align-content: center;
+}
+
+#LoginCard label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#LoginCard input {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#LoginCard a{
+    font-size: 0.75rem;
+}
+
+#RegisterCard{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+    padding: 1rem;
+    background: gray;
+    margin: auto;
+    align-content: center;
+
+}
+
+#RegisterCard label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#RegisterCard input {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#RegisterCard a {
+    font-size: 0.75rem;
+}
+

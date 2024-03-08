@@ -1,0 +1,10 @@
+[
+  {
+    "ConfigVersion": "1.0.0",
+    "AuthorName": "ListenHayaku",
+    "AuthorAge": 15,
+    "DbNameUserData": "UserData",
+    "DbNameDiaryData": "DiaryData",
+    "RegexModifyUser": "(?=(<tbody>)\\s+)?(.+\\s+)?(?=(<\/tbody>))"
+  }
+]
