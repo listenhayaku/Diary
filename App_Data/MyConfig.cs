@@ -14,6 +14,7 @@ namespace Diary
         public int AuthorAge { get; set; }
         public string DbNameUserData {get;set;}
         public string DbNameDiaryData { get; set; }
+        public string DbNameObjectData { get; set; }
         public string RegexModifyUser { get; set; }
 
         public bool Show()
@@ -22,6 +23,8 @@ namespace Diary
             Debug.WriteLine("(debug)[MyConfig.Show]AuthorName:"+AuthorName);
             Debug.WriteLine("(debug)[MyConfig.Show]AuthorAge:"+AuthorAge);
             Debug.WriteLine("(debug)[MyConfig.Show]DbNameUserData:" + DbNameUserData);
+            Debug.WriteLine("(debug)[MyConfig.Show]DbNameUserData:" + DbNameDiaryData);
+            Debug.WriteLine("(debug)[MyConfig.Show]DbNameUserData:" + DbNameObjectData);
             Debug.WriteLine("(debug)[MyConfig.Show]RegexModifyUser:" + RegexModifyUser);
             return true;
         }

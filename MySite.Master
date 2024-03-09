@@ -19,8 +19,6 @@
                 <li><a runat="server" href="~/ModifyUser">修改權限</a></li>
 
                 <li><a runat="server" href="~/Login">登入</a></li>
-                
-                <li>Test</li>
             </ul>
         </div>
         <div>

@@ -5,6 +5,7 @@
     "AuthorAge": 15,
     "DbNameUserData": "UserData",
     "DbNameDiaryData": "DiaryData",
+    "DbNameObjectData": "ObjectData",
     "RegexModifyUser": "(?=(<tbody>)\\s+)?(.+\\s+)?(?=(<\/tbody>))"
   }
 ]

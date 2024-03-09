@@ -115,6 +115,7 @@
     <Content Include="Content\MyScript\DeleteDiary.js" />
     <Content Include="Content\MyScript\DiaryContentNotExist.js" />
     <Content Include="Content\MyScript\DiaryList.js" />
+    <Content Include="Content\MyScript\JournalRunner.js" />
     <Content Include="Content\MyScript\MyLoginScript.js" />
     <Content Include="Content\MyScript\MyModifyUser.js" />
     <Content Include="Content\MyScript\MyWebsocket.js" />
@@ -150,6 +151,8 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Home.aspx" />
     <Content Include="NewDiary.aspx" />
+    <Content Include="ObjectList_Partial.ascx" />
+    <None Include="README.md" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -281,6 +284,14 @@
     </Compile>
     <Compile Include="NewDiary.aspx.designer.cs">
       <DependentUpon>NewDiary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\ObjectData.cs" />
+    <Compile Include="ObjectList_Partial.ascx.cs">
+      <DependentUpon>ObjectList_Partial.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ObjectList_Partial.ascx.designer.cs">
+      <DependentUpon>ObjectList_Partial.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

@@ -71,3 +71,15 @@ input[type="submit"]:hover, input[type="button"]:hover {
     height: 60vh !important; /*不得已 因為asp:TextBox渲染之後在前端自動有style="height:100%;"*/
 
 }
+
+.col10{
+    height: 100%;
+}
+
+.horizontal_arrangement_container {
+    display: flex;
+}
+
+.horizontal_arrangement {
+
+}

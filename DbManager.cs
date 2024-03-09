@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace Diary
 {
@@ -14,13 +15,17 @@ namespace Diary
 
         public List<UserData> listUserData = new List<UserData>();
         public List<DiaryData> listDiaryData = new List<DiaryData>();   //我在思考要不要全部導入到記憶體再分，這樣不會有sql injection但是對Server負擔應該不小
+        public List<ObjectData> listObjectData = new List<ObjectData>();
         private int UserNextId; //目前只有做建構函數初始，之後每次修改應該都要確認否則估計會有問題
         private int DiaryNextId;
+        private int ObjectNextId;
         public DbManager()
         {
             LoadUserData();
             LoadDiaryData();
+            LoadObjectData();
         }
+
         public bool LoadUserData()
         {
             //資料庫的ID不一定是連續的因為會有修改刪除的狀況，所以用兩個 一個紀錄數量 一個紀錄最大ID 取大的+1給UserNextId
@@ -210,6 +215,63 @@ namespace Diary
             }
             return true;
         }
+
+        public bool LoadObjectData()
+        {
+            int Maxid = 0;
+            int Count = 0;
+            ConnectionStringSettings mySetting = ConfigurationManager.ConnectionStrings["DbConnectionString"];
+            if (mySetting == null || string.IsNullOrEmpty(mySetting.ConnectionString))
+                throw new Exception("Fatal error: missing connecting string in web.config file");
+
+            SqlConnection conn = new SqlConnection(mySetting.ConnectionString.ToString());
+            conn.Open();
+            SqlCommand cmd = new SqlCommand($"select * from {Global.myconfigmanager.listMyConfig[0].DbNameObjectData};", conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            try
+            {
+                listObjectData.Clear();
+                while (dr.Read())
+                {
+                    ObjectData objectData = new ObjectData();
+                    //我也不知道為什麼 提取int要這樣用
+                    //https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader
+                    objectData.Id = dr.GetInt32(0);
+                    objectData.OwnerId = dr.GetInt32(1);
+                    //objectData.Username = dr.GetString(2);  //這個也可以 看起來比較統一
+                    objectData.OwnerName = dr.GetString(2);
+                    objectData.Datetime = dr.GetDateTime(3);
+                    objectData.Name = dr.GetString(4);
+                    objectData.Description = JsonConvert.DeserializeObject<Dictionary<string,string>>(dr.GetString(5));
+                    //var values = JsonConvert.DeserializeObject<Dictionary<string, string>>(dr.GetString(5));
+
+                    //objectData.Show();
+                    listObjectData.Add(objectData);
+
+                    Maxid = (Maxid > objectData.Id) ? Maxid : objectData.Id;
+                    Count++;
+                }
+                ObjectNextId = ((Maxid > Count) ? Maxid : Count) + 1;
+                return true;
+            }
+            finally
+            {
+                dr.Close();
+                conn.Close();
+            }
+        }
+
+        public bool RetreiveObjectData(string OwnerName, ref List<ObjectData> listObjectData)
+        {
+            listObjectData.Clear();
+            LoadObjectData();
+            for (int i = 0; i < this.listObjectData.Count; i++)
+            {
+                if (this.listObjectData[i].OwnerName == OwnerName) listObjectData.Add(this.listObjectData[i]);
+            }
+            return true;
+        }
+
         private void Exec(String stringSqlCmd)
         {
             ConnectionStringSettings mySetting = ConfigurationManager.ConnectionStrings["DbConnectionString"];
