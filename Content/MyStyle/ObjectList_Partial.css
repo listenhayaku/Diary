@@ -1,0 +1,68 @@
+﻿.ObjectList_Partial_ArrowIcon{
+    height: 2rem;
+    width: 2rem;
+    position: relative;
+    transition: 0.5s;
+    background-color: var(--maintheme1);
+    flex: 0 0 2rem; /*在flex容器內這樣設定就不會因為flex容器而被壓縮*/
+}
+
+.ObjectList_Partial_ArrowIcon.Shrinked {
+}
+
+.ObjectList_Partial_ArrowIcon.Expanded{
+    transform: rotateY(180deg);
+}
+
+.ObjectList_Partial_ArrowIcon:hover{
+    cursor: pointer;
+}
+
+.ObjectList_Partial_ArrowIcon::before {
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    position: absolute;
+    border: 1rem solid var(--backgroundtheme1);
+    border-left: 0px;
+    border-right: 1rem solid var(--maintheme1);
+}
+
+.ObjectList_Partial_ArrowIcon::after {
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 1rem;
+    border: 1rem solid transparent;
+    border-left: 0px;
+    border-right: 1rem solid var(--backgroundtheme1);
+}
+
+#ObjectListBox{
+    height: 15rem;
+    overflow: scroll;
+    position: relative;
+    transition: 1s;
+}
+
+.ObjectListBox.Shrinked {
+    left: 100vw;
+}
+
+.ObjectListBox.Expanded {
+    left: 3rem;
+}
+
+.ObjectListBox table{
+    table-layout: auto;
+    text-align: center;
+}
+
+.ObjectListBox table tr.ItemName:hover {
+    background: red;
+}
+
+.ObjectListBox table tr.Shrinked{
+    /*display: none;*/
+}

@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/Content/MyStyle/DiaryContent.css" rel="stylesheet" />
+    <link href="/Content/MyStyle/ObjectList_Partial.css" rel="stylesheet" />  <!--專屬ObjectList_Partial的-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainFrame" runat="server">
     <div class="col10 horizontal_arrangement_container">
@@ -32,5 +33,5 @@
     <asp:Button ID="ModifyButton" Text="Modify" UseSubmitBehavior="false" runat="server" OnClick="ModifyButton_Click"/>
     <asp:Button ID="BackButton" Text="BacktoList" UseSubmitBehavior="false" runat="server" OnClick="BacktoListButton_Click"/>
     
-    <script src="/Content/MyScript/JournalRunner"></script>
+    <script src="/Content/MyScript/JournalRunner.js"></script>
 </asp:Content>

@@ -20,6 +20,7 @@ body{
     padding: 0.5rem;
     height: 100%;
     width: 100%;
+    overflow: hidden;   /*超出去的東西不要讓主頁面有滑動軸*/
 }
 
 span{
@@ -78,8 +79,8 @@ input[type="submit"]:hover, input[type="button"]:hover {
 
 .horizontal_arrangement_container {
     display: flex;
+    position: relative;
 }
 
 .horizontal_arrangement {
-
 }

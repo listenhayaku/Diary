@@ -3,6 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="/Content/MyStyle/NewDiary.css" rel="stylesheet" />
+    <link href="/Content/MyStyle/ObjectList_Partial.css" rel="stylesheet" />  <!--專屬ObjectList_Partial的-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainFrame" runat="server">
     <div class="col10 horizontal_arrangement_container">
@@ -23,7 +24,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="horizontal_arrangement test">
+        <div class="horizontal_arrangement">
             <uc:ObjectList_Partial runat="server" ID="ObjectList_PartialControl" />
         </div>
     </div>
@@ -32,6 +33,6 @@
         <asp:Button ID="CancelButton" Text="取消" runat="server" OnClick="CancelButton_Click"/>
     </div>
 
-
+    <script src="/Content/MyScript/JournalRunner.js"></script>
 
 </asp:Content>

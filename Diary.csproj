@@ -127,6 +127,7 @@
     <Content Include="Content\MyStyle\ModifyUser.css" />
     <Content Include="Content\MyStyle\MyStyle.css" />
     <Content Include="Content\MyStyle\NewDiary.css" />
+    <Content Include="Content\MyStyle\ObjectList_Partial.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="DeleteDiary.aspx" />
